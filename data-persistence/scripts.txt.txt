@@ -1,0 +1,5 @@
+use tfm
+db.createCollection("users")
+db.createCollection("streams")
+db.createCollection("songs")
+db.createCollection("artists")
