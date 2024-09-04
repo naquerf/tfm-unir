@@ -1,0 +1,49 @@
+#mapplot .tooltip {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    padding: .5rem;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 10px;
+    color: #FFFFFF;
+    border-radius: 4px;    
+    }
+
+#mapplot  .tick {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem;
+}
+
+#mapplot .axis_legend {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+}
+
+#mapplot .tittle {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+}
+
+#mapplot circle, path{
+    transition: 300ms linear;
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+#mapplot path.not-hover{
+    filter: grayscale(0.5);
+    opacity: 0.5;
+}
+
+#mapplot  circle.not-hover{
+    opacity: 0;
+}
+
+#mapplot circle:hover, path.country:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+

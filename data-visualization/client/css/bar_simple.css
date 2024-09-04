@@ -1,0 +1,100 @@
+#barplot .tooltip {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    padding: .5rem;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 10px;
+    color: #FFFFFF;
+    border-radius: 4px;    
+    }
+
+#barplot text{
+    color: #d4d4d4;
+}
+
+#barplot .tick {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.75rem;
+    color: #d4d4d4;
+}
+
+#barplot .axis-legend {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    color: #d4d4d4;
+}
+
+#barplot .tittle {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    color: #d4d4d4;
+}
+
+#barplot .bar-group rect{
+    transition: 500ms ease-in-out;
+    opacity: 1;
+}
+
+#barplot .bar-group:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+#barplot .bar-group.not-hover{
+    filter: grayscale(0.5);
+    opacity: 0.5;
+    position: absolute;
+}
+
+#barplot .bar-name{
+    font-family: "Montserrat", sans-serif;
+}
+
+#barplot .bar-value{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    opacity: 0;
+}
+
+#barplot .bar-group:hover .bar-value{
+    opacity: 1;
+    transition: 1s;
+}
+
+.bar-selected .bar-value{
+    opacity: 1;
+    transition: 1;
+}
+
+.bar-selected .bar-name {
+    position: relative;
+    animation: move-words 20s linear infinite;
+    margin: 0;
+  }
+
+.bar-group{
+    transition: 0.6s ease;
+}
+
+.bar-group.no-selected{
+    transition: 0.6s ease;
+    filter: grayscale(0.8);
+}
+
+text{
+    user-select: none;
+    animation: move-words 20s linear infinite;
+}
+
+@keyframes move-words {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: -100%;
+    }
+  }

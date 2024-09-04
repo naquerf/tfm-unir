@@ -1,0 +1,126 @@
+a {
+ color: #b3b3b3;
+ text-decoration: none;   
+}
+
+body {
+    background-color: #121212;
+    font-family: "Montserrat", sans-serif;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #212121;
+    height: 98%;
+    width: 98%;
+    margin-left: 1%;
+    margin-top: 1%;
+    flex-direction: row;
+}
+
+.flex-container>div.flex-title {
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+    text-align: center;
+    font-size: 30px;
+    background-color: #1db954;
+    color: #d4d4d4;
+    align-items: center;
+    flex: 30%;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+div.flex-title>div:first-child {
+    font-size: 3em;
+}
+
+div.flex-title div {
+    padding-top: 10px;
+}
+
+.flex-container>.flex-complement {
+    margin: 0%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 100;
+    flex: 70%;
+    background-color: #212121;
+    color: #d4d4d4;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+
+.flex-complement>.description {
+    padding-top: 20%;
+    padding-bottom: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    flex: 30% 50% 500px;
+}
+
+.flex-complement>.items {
+    flex: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+.items>.viz-item {
+    flex: 30% 1 ;
+    transition: filter 0.5s ease-in-out;
+}
+
+.items i {
+    font-size: 150px;
+    color: #b3b3b3;
+}
+
+.viz-item-description{
+    font-size: 20px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.viz-item{
+    background-color: #212121;
+}
+
+.viz-item:hover .viz-item-description {
+    opacity: 1;
+    transition: 1s;
+}
+
+.viz-item:hover {
+    transition: filter 0.5s ease-in-out;
+    filter: invert(100%);;
+}
+
+.left-container{
+    flex: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-container{
+    flex: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.barplot{
+    flex: 100% 50% 500px;
+}
+
+svg {
+    color:#d4d4d4;  
+}
+
+.tooltip{
+    font-family: "Montserrat", sans-serif;
+}

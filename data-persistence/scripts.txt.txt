@@ -3,3 +3,15 @@ db.createCollection("users")
 db.createCollection("streams")
 db.createCollection("songs")
 db.createCollection("artists")
+
+
+//crear llave compuesta
+db.streams.aggregate([{$addFields:{converted_year:{$toString:"$stream_year"},converted_month:{$toString:"$stream_month"}}},{$project:{composed_key:{$concat:["$user.username","#","$track.name","#","$artist.name","#","$converted_year",".","$converted_month"]}}},{$merge:"streams"}])
+
+//colección a partir de agregación
+db.streams.aggregate([{$group:{_id:"$composed_key", minutes_listened:{$sum:"$stream_duration"}, streams:{$sum: 1}, user:{$first: "$user"}, track:{$first:"$track"}, artist:{$first:"$artist"},stream_month:{$first:"$stream_month"}, stream_year:{$first:"$stream_year"}}},{$out:"wrapviz"}])
+
+
+//creación colección para países
+db.wrapviz.aggregate([{$addFields:{converted_year:{$toString:"$stream_year"}}},{$project:{country_composed_key:{$concat:["$user.country","#","$track.name","#","$artist.name","#","$converted_year"]}}},{$merge:"wrapviz"}])
+db.wrapviz.aggregate([{$group:{_id:"$country_composed_key", minutes_listened:{$sum:"$stream_duration"}, streams:{$sum: 1}, country:{$first: "$user.country"}, track:{$first:"$track"}, artist:{$first:"$artist"}, stream_year:{$first:"$stream_year"}}},{$out:"wrapviz_country"}])
